@@ -86,7 +86,7 @@ function ProductShowcase() {
   }
 
   return (
-    <section className="text-center py-12 sm:py-16 px-4 sm:px-6 bg-petal/30" id="collections">
+    <section id="product-showcase" className="text-center py-12 sm:py-16 px-4 sm:px-6 bg-petal/30">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cocoa mb-4 px-4">

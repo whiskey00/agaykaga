@@ -11,7 +11,7 @@ function HeroSection() {
   const prev = () => setIdx((i) => (i - 1 + slides.length) % slides.length);
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-1 sm:gap-2 w-full px-2 sm:px-4">
+    <section id="hero" className="grid grid-cols-1 md:grid-cols-2 gap-1 sm:gap-2 w-full px-2 sm:px-4">
       {/* Left static image area */}
       <div className="flex items-center justify-center h-64 sm:h-80 md:h-96 lg:h-[28rem] xl:h-[32rem] text-white text-lg sm:text-xl select-none bg-mauve">
         Image

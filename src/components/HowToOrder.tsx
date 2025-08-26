@@ -54,7 +54,7 @@ function HowToOrder() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-almond">
+    <section id="how-to-order" className="py-16 sm:py-20 bg-almond">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">

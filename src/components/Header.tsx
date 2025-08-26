@@ -1,26 +1,26 @@
 import React from 'react';
 
-interface HeaderProps {
-  currentPage: string;
-  onPageChange: (page: string) => void;
-}
+function Header() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-function Header({ currentPage, onPageChange }: HeaderProps) {
   return (
     <>
       {/* Navigation */}
       <nav className="w-full flex justify-center py-3 sm:py-4 text-xs sm:text-sm gap-4 sm:gap-6 md:gap-8 text-cocoa/80 px-4">
         {[
-          ["Home", "home"],
-          ["Collections", "collections"],
-          ["About", "about"],
-        ].map(([label, page]) => (
+          ["Home", "hero"],
+          ["Collections", "product-showcase"],
+          ["How to Order", "how-to-order"],
+        ].map(([label, sectionId]) => (
           <button
             key={label}
-            onClick={() => onPageChange(page)}
-            className={`hover:text-merlot transition-colors ${
-              currentPage === page ? 'text-merlot' : ''
-            }`}
+            onClick={() => scrollToSection(sectionId)}
+            className="hover:text-merlot transition-colors"
           >
             {label}
           </button>
