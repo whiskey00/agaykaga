@@ -6,11 +6,6 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 2rem; /* Account for any fixed headers */
-  }
-  
-  * {
-    scroll-behavior: smooth;
   }
   
   body {
@@ -43,32 +38,10 @@
     @apply w-16 h-16 bg-gradient-to-br from-stone-600 to-stone-800 rounded-full flex items-center justify-center text-white text-2xl mb-4;
   }
   
-  .smooth-scroll {
-    scroll-behavior: smooth;
-  }
-  
-  .section-scroll {
-    scroll-margin-top: 2rem;
-  }
-  
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-  
-  /* Enhanced smooth scrolling */
-  @media (prefers-reduced-motion: no-preference) {
-    * {
-      scroll-behavior: smooth;
-    }
-  }
-  
-  /* Respect user's reduced motion preference */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      scroll-behavior: auto;
-    }
   }
 }
