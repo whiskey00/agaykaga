@@ -33,7 +33,13 @@ function Header() {
 
       {/* Title */}
       <header className="text-center py-4 sm:py-6 md:py-8 px-4">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-cocoa tracking-wide leading-tight">AGAYKAGA</h1>
+        <div className="relative inline-block">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-cocoa tracking-widest leading-tight font-serif mb-2">
+            AGAYKAGA
+          </h1>
+          {/* Small underline with proper spacing */}
+          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 md:w-24 lg:w-28 h-0.5 bg-merlot"></div>
+        </div>
       </header>
     </>
   );
