@@ -1,8 +1,7 @@
 import React from 'react';
-import HeroSection from './HeroSection';
-import ProductShowcase from './ProductShowcase';
-import MidPageBanner from './MidPageBanner';
-import HowToOrder from './HowToOrder';
+import { HeroSection } from '../hero';
+import { ProductShowcase } from '../products';
+import { MidPageBanner, HowToOrder } from '../shared';
 import AboutSection from './AboutSection';
 
 function HomePage() {

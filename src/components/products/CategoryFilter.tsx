@@ -1,6 +1,6 @@
 import React from 'react';
-import { CATEGORIES } from '../data/products';
-import { FilterOption } from '../hooks/useProductFilter';
+import { CATEGORIES } from '../../data/products';
+import { FilterOption } from '../../hooks/useProductFilter';
 
 interface CategoryFilterProps {
   selectedCategory: FilterOption;

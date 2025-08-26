@@ -1,6 +1,6 @@
 import React from 'react';
-import { useProductFilter } from '../hooks/useProductFilter';
-import { useModal } from '../hooks/useModal';
+import { useProductFilter } from '../../hooks/useProductFilter';
+import { useModal } from '../../hooks/useModal';
 import { CategoryFilter } from './CategoryFilter';
 import { ProductGrid } from './ProductGrid';
 import { ProductNavigation } from './ProductNavigation';

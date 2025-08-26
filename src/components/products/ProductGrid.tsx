@@ -1,7 +1,7 @@
 import React from 'react';
-import { Product } from '../data/products';
+import { Product } from '../../data/products';
 import { ProductCard } from './ProductCard';
-import { useResponsive } from '../hooks/useResponsive';
+import { useResponsive } from '../../hooks/useResponsive';
 
 interface ProductGridProps {
   products: Product[];

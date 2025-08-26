@@ -1,8 +1,7 @@
 import React from 'react';
 
 // Import components
-import HomePage from './components/HomePage';
-import Header from './components/Header';
+import { HomePage, Header } from './components';
 
 function App() {
   return (
