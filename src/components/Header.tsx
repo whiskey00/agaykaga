@@ -4,14 +4,18 @@ function Header() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
     }
   };
 
   return (
     <>
       {/* Navigation */}
-      <nav className="w-full flex justify-center py-3 sm:py-4 text-xs sm:text-sm gap-4 sm:gap-6 md:gap-8 text-cocoa/80 px-4">
+      <nav className="w-full flex justify-center py-2 sm:py-3 md:py-4 text-xs sm:text-sm gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-cocoa/80 px-4">
         {[
           ["Home", "hero"],
           ["Collections", "product-showcase"],
@@ -20,7 +24,7 @@ function Header() {
           <button
             key={label}
             onClick={() => scrollToSection(sectionId)}
-            className="hover:text-merlot transition-colors"
+            className="hover:text-merlot transition-colors py-1 px-2 rounded-md hover:bg-petal/50"
           >
             {label}
           </button>
@@ -28,8 +32,8 @@ function Header() {
       </nav>
 
       {/* Title */}
-      <header className="text-center py-6 sm:py-8 px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-cocoa tracking-wide">AGAYKAGA</h1>
+      <header className="text-center py-4 sm:py-6 md:py-8 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-cocoa tracking-wide leading-tight">AGAYKAGA</h1>
       </header>
     </>
   );

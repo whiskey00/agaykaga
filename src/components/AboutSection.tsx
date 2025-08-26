@@ -3,14 +3,14 @@ import { Facebook, Mail, Instagram, Heart } from 'lucide-react';
 
 function AboutSection() {
   return (
-    <footer className="bg-cocoa text-white px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20" id="about">
+    <footer className="bg-cocoa text-white px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 lg:py-20" id="about">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div className="text-center lg:text-left">
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
               <Heart className="w-8 h-8 text-petal" />
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">AGAYKAGA</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white">AGAYKAGA</h3>
             </div>
             <p className="text-sm sm:text-base leading-relaxed text-petal max-w-md mx-auto lg:mx-0">
               Filling your space with something that makes you and your loved ones smile is a sweet reminder to celebrate life's simple joys.
