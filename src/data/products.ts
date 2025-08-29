@@ -1,5 +1,5 @@
 // Import sample flower images
-import flower1 from '../images/sample_flowers/1.png';
+import flower1 from '../images/sample_flowers/1.jpg';
 import flower2 from '../images/sample_flowers/2.png';
 import flower3 from '../images/sample_flowers/3.png';
 import flower4 from '../images/sample_flowers/4.png';
