@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Product, ProductCategory, getProductsByCategory, getProductSets } from '../data/products';
 
 export type FilterOption = "All" | ProductCategory;
+export type AnimationDirection = 'next' | 'previous' | null;
 
 interface UseProductFilterReturn {
   selectedCategory: FilterOption;
@@ -13,11 +14,13 @@ interface UseProductFilterReturn {
   goToNextPage: () => void;
   goToPreviousPage: () => void;
   hasNavigation: boolean;
+  animationDirection: AnimationDirection;
 }
 
 export const useProductFilter = (itemsPerPage: number = 10): UseProductFilterReturn => {
   const [selectedCategory, setSelectedCategory] = useState<FilterOption>("All");
   const [currentPage, setCurrentPage] = useState(0);
+  const [animationDirection, setAnimationDirection] = useState<AnimationDirection>(null);
 
   // Memoized product filtering and pagination logic
   const { currentProducts, totalPages, hasNavigation } = useMemo(() => {
@@ -49,10 +52,14 @@ export const useProductFilter = (itemsPerPage: number = 10): UseProductFilterRet
 
   // Navigation handlers
   const goToNextPage = () => {
+    setAnimationDirection('next');
+    setTimeout(() => setAnimationDirection(null), 600);
     setCurrentPage((prev) => (prev + 1) % totalPages);
   };
 
   const goToPreviousPage = () => {
+    setAnimationDirection('previous');
+    setTimeout(() => setAnimationDirection(null), 600);
     setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
   };
 
@@ -65,6 +72,7 @@ export const useProductFilter = (itemsPerPage: number = 10): UseProductFilterRet
     setCurrentPage,
     goToNextPage,
     goToPreviousPage,
-    hasNavigation
+    hasNavigation,
+    animationDirection
   };
 };

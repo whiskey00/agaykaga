@@ -27,7 +27,8 @@ const ProductShowcase: React.FC = () => {
     setSelectedCategory,
     goToNextPage,
     goToPreviousPage,
-    hasNavigation
+    hasNavigation,
+    animationDirection
   } = useProductFilter(10); // 10 products per page
 
   const {
@@ -64,6 +65,7 @@ const ProductShowcase: React.FC = () => {
             <ProductGrid 
               products={currentProducts}
               onProductClick={openModal}
+              animationDirection={animationDirection}
             />
             
             {/* Navigation - Only shown when filtering by "All" */}
