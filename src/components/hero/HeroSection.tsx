@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useSlideshow } from '../../hooks/useSlideshow';
 import { HERO_SLIDES } from '../../data/heroSlides';
 import { BrandSection } from './BrandSection';
@@ -28,8 +29,11 @@ const HeroSection: React.FC = () => {
   });
 
   return (
-    <section 
-      id="hero" 
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      id="hero"
       className="grid grid-cols-1 md:grid-cols-2 w-full mt-6 sm:mt-8 md:mt-10 lg:mt-12"
     >
       {/* Left Section - Brand Display */}
@@ -39,7 +43,7 @@ const HeroSection: React.FC = () => {
       <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[28rem] select-none overflow-hidden">
         {/* Slide Content */}
         <SlideContent slide={currentSlide} />
-        
+
         {/* Navigation Dots */}
         <SlideDots
           slides={HERO_SLIDES}
@@ -48,7 +52,7 @@ const HeroSection: React.FC = () => {
           onDotClick={goToSlide}
         />
       </div>
-    </section>
+    </motion.section>
   );
 };
 

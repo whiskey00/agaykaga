@@ -40,8 +40,8 @@ const ProductShowcase: React.FC = () => {
 
   return (
     <>
-      <section 
-        id="product-showcase" 
+      <section
+        id="product-showcase"
         className="text-center py-6 sm:py-8 md:py-12 px-4 sm:px-6 bg-petal/30 min-h-screen flex flex-col"
       >
         <div className="max-w-7xl mx-auto flex-1 flex flex-col">
@@ -51,9 +51,9 @@ const ProductShowcase: React.FC = () => {
               Check some pieces of happiness you can keep forever
             </h2>
             <div className="w-12 sm:w-16 md:w-20 h-1 bg-merlot mx-auto rounded-full mb-4 sm:mb-6 md:mb-8"></div>
-            
+
             {/* Category Filter */}
-            <CategoryFilter 
+            <CategoryFilter
               selectedCategory={selectedCategory}
               onCategoryChange={setSelectedCategory}
             />
@@ -62,12 +62,14 @@ const ProductShowcase: React.FC = () => {
           {/* Main Content Area */}
           <main className="flex-1 flex flex-col justify-center">
             {/* Product Grid */}
-            <ProductGrid 
+            <ProductGrid
               products={currentProducts}
               onProductClick={openModal}
               animationDirection={animationDirection}
+              selectedCategory={selectedCategory}
+              currentPage={currentPage}
             />
-            
+
             {/* Navigation - Only shown when filtering by "All" */}
             {hasNavigation && (
               <ProductNavigation

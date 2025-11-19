@@ -12,3 +12,6 @@ export * from './layout';
 
 // Shared Components
 export * from './shared';
+
+// Animations
+export { default as PageTransition } from './PageTransition';

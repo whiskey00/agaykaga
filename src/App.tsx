@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Import components
-import { HomePage, Header } from './components';
+import { HomePage, Header, PageTransition } from './components';
 
 function App() {
   return (
@@ -11,7 +11,9 @@ function App() {
 
       {/* Main Content */}
       <main>
-        <HomePage />
+        <PageTransition>
+          <HomePage />
+        </PageTransition>
       </main>
     </div>
   );
