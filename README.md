@@ -1,8 +1,8 @@
-# 🌺 Fuzzy Wire Flowers - E-commerce Website
+# Fuzzy Wire Flowers - E-commerce Website
 
 A beautiful, modern website for a fuzzy wire flower shop built with React and Tailwind CSS. This website is designed for product browsing and display only, with all orders processed through Facebook Messenger.
 
-## ✨ Features
+##  Features
 
 - **Responsive Design**: Mobile-first approach with beautiful layouts for all devices
 - **Product Showcase**: Elegant product grid with ratings, reviews, and pricing
@@ -10,7 +10,7 @@ A beautiful, modern website for a fuzzy wire flower shop built with React and Ta
 - **Modern UI/UX**: Inspired by premium e-commerce websites with floral aesthetics
 - **Performance Optimized**: Built with React for fast, smooth user experience
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -37,7 +37,7 @@ npm start
 
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## 🛠️ Build & Deploy
+## Build & Deploy
 
 ### Build for Production
 
@@ -63,7 +63,7 @@ npm install --save-dev gh-pages
 npm run deploy
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Colors
 The website uses a custom color palette defined in `tailwind.config.js`:
@@ -78,7 +78,7 @@ The website uses a custom color palette defined in `tailwind.config.js`:
 - **Inter**: Modern sans-serif for headings and body text
 - **Dancing Script**: Elegant cursive for special accents
 
-## 📱 Components
+## Components
 
 - **Header**: Navigation, search, and user icons
 - **Hero**: Promotional banners and calls-to-action
@@ -88,7 +88,7 @@ The website uses a custom color palette defined in `tailwind.config.js`:
 - **Partners**: Brand/partner showcase
 - **Footer**: Contact information and social links
 
-## 🔧 Technology Stack
+## Technology Stack
 
 - **React 19**: Modern React with TypeScript
 - **Tailwind CSS**: Utility-first CSS framework
@@ -96,7 +96,7 @@ The website uses a custom color palette defined in `tailwind.config.js`:
 - **Responsive Design**: Mobile-first approach
 - **Modern CSS**: CSS Grid, Flexbox, and custom properties
 
-## 📋 Project Structure
+## Project Structure
 
 ```
 src/
@@ -113,7 +113,7 @@ src/
 └── index.css
 ```
 
-## 🌐 Deployment
+## Deployment
 
 This website is designed to be easily deployable on:
 - GitHub Pages
@@ -121,13 +121,13 @@ This website is designed to be easily deployable on:
 - Vercel
 - Any static hosting service
 
-## 📞 Ordering Information
+## Ordering Information
 
 **Important**: This website is for product browsing only. All orders are processed through:
 - Facebook Messenger
 - Direct messaging on social media platforms
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -135,11 +135,11 @@ This website is designed to be easily deployable on:
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Inspired by modern e-commerce UI/UX designs
 - Built with love for the fuzzy wire flower community
