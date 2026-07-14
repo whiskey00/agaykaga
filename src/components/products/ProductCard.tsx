@@ -8,32 +8,38 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
-  const handleClick = () => {
-    onClick(product);
-  };
-
   return (
-    <motion.div
-      whileHover={{ y: -5, scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 sm:p-4 w-full max-w-xs mx-auto border border-petal/50 hover:border-merlot/30 cursor-pointer"
-      onClick={handleClick}
+    <motion.button
+      whileTap={{ scale: 0.985 }}
+      onClick={() => onClick(product)}
+      className="card-bryl group text-left w-full max-w-xs mx-auto p-3 sm:p-4 cursor-pointer"
     >
-      <div className="h-32 sm:h-36 md:h-40 bg-gradient-to-br from-petal/40 to-peony/60 mb-3 flex items-center justify-center rounded-lg overflow-hidden shadow-inner">
+      {/* Image well */}
+      <div className="relative h-32 sm:h-36 md:h-40 bg-[color:var(--gray-50)] mb-3 overflow-hidden rounded-[10px] border border-[color:var(--gray-200)]">
         <motion.img
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.04]"
         />
+        <div className="absolute top-2 left-2 chip bg-white/85 backdrop-blur-sm">
+          {product.category}
+        </div>
       </div>
-      <p className="text-xs sm:text-sm font-semibold text-cocoa mb-1 line-clamp-2 leading-tight">
-        {product.name}
-      </p>
-      <p className="text-sm sm:text-base text-merlot font-bold">
-        ₱{product.price.toFixed(2)}
-      </p>
-    </motion.div>
+
+      {/* Meta */}
+      <div className="flex items-start justify-between gap-2">
+        <p className="text-sm text-ink line-clamp-2 leading-snug font-medium">
+          {product.name}
+        </p>
+      </div>
+      <div className="mt-2 flex items-center justify-between">
+        <span className="font-mono-ui text-sm text-ink">
+          &#8369;{product.price.toFixed(2)}
+        </span>
+        <span className="micro-label group-hover:text-ink transition-colors">
+          view &nearr;
+        </span>
+      </div>
+    </motion.button>
   );
 };

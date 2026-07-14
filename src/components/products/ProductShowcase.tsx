@@ -42,15 +42,16 @@ const ProductShowcase: React.FC = () => {
     <>
       <section
         id="product-showcase"
-        className="text-center py-6 sm:py-8 md:py-12 px-4 sm:px-6 bg-petal/30 min-h-screen flex flex-col"
+        className="text-center py-14 sm:py-16 md:py-20 px-4 sm:px-6 bg-white min-h-screen flex flex-col"
       >
-        <div className="max-w-7xl mx-auto flex-1 flex flex-col">
+        <div className="max-w-6xl mx-auto flex-1 flex flex-col w-full">
           {/* Header Section */}
-          <header className="mb-4 sm:mb-6 md:mb-8">
-            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-cocoa mb-1 sm:mb-2 px-4 leading-tight">
-              Check some pieces of happiness you can keep forever
+          <header className="mb-8 sm:mb-10 md:mb-12">
+            <div className="micro-label mb-3">03 &mdash; collections</div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-ink mb-4 leading-tight max-w-2xl mx-auto">
+              pieces of happiness you can keep forever.
             </h2>
-            <div className="w-12 sm:w-16 md:w-20 h-1 bg-merlot mx-auto rounded-full mb-4 sm:mb-6 md:mb-8"></div>
+            <div className="rule w-16 mx-auto mb-8" />
 
             {/* Category Filter */}
             <CategoryFilter

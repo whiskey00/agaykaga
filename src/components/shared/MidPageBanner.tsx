@@ -5,49 +5,34 @@ import flower3 from '../../images/sample_flowers/3.png';
 
 function MidPageBanner() {
   return (
-    <section className="relative h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem] bg-merlot overflow-hidden">
-      
-      {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 md:px-8">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Main Message */}
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 font-serif leading-tight">
-            Every bouquet can be customized<br />
-            <span className="text-peony">into different shade of color</span>
-          </h2>
-          
-          {/* Decorative Line */}
-          <div className="w-16 sm:w-20 md:w-24 lg:w-32 h-1 bg-peony mx-auto rounded-full"></div>
-          
-          {/* Flower Images */}
-          <div className="flex justify-center items-center gap-6 sm:gap-8 md:gap-12 mt-6 sm:mt-8">
-            {/* Left Flower */}
-            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 border border-white/20 hover:scale-105 transition-transform duration-300">
-              <img 
-                src={flower1} 
-                alt="Custom flower arrangement" 
-                className="w-full h-full object-contain opacity-90"
-              />
+    <section className="relative bg-ink text-white overflow-hidden">
+      {/* Halftone accent, inverted */}
+      <div className="pointer-events-none absolute inset-0 halftone-invert opacity-70" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 py-20 sm:py-24 md:py-28 text-center">
+        <div className="micro-label !text-white/60 mb-4">
+          05 &mdash; customization
+        </div>
+
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-white">
+          every bouquet can be customized
+        </h2>
+        <h2 className="font-pixel text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white/70 mt-2 leading-tight">
+          into any shade you love.
+        </h2>
+
+        <div className="h-px w-16 bg-white/30 mx-auto mt-8" />
+
+        {/* Flower rail */}
+        <div className="flex justify-center items-center gap-6 sm:gap-10 mt-10">
+          {[flower1, flower2, flower3].map((src, i) => (
+            <div
+              key={i}
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border border-white/25 p-3 grayscale contrast-125 opacity-90 hover:opacity-100 transition-opacity duration-300"
+            >
+              <img src={src} alt="" className="w-full h-full object-contain" />
             </div>
-            
-            {/* Center Flower */}
-            <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-white/15 backdrop-blur-sm rounded-full p-3 sm:p-4 border-2 border-white/30 hover:scale-105 transition-transform duration-300 shadow-xl">
-              <img 
-                src={flower2} 
-                alt="Customizable bouquet" 
-                className="w-full h-full object-contain"
-              />
-            </div>
-            
-            {/* Right Flower */}
-            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-white/10 backdrop-blur-sm rounded-full p-2 sm:p-3 border border-white/20 hover:scale-105 transition-transform duration-300">
-              <img 
-                src={flower3} 
-                alt="Color variations" 
-                className="w-full h-full object-contain opacity-90"
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

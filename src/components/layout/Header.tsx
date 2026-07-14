@@ -4,44 +4,50 @@ function Header() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
-        inline: 'nearest'
+        inline: 'nearest',
       });
     }
   };
 
-  return (
-    <>
-      {/* Navigation */}
-      <nav className="w-full flex justify-center py-2 sm:py-3 md:py-4 text-xs sm:text-sm gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-cocoa/80 px-4">
-        {[
-          ["Home", "hero"],
-          ["Collections", "product-showcase"],
-          ["How to Order", "how-to-order"],
-        ].map(([label, sectionId]) => (
-          <button
-            key={label}
-            onClick={() => scrollToSection(sectionId)}
-            className="hover:text-merlot transition-colors py-1 px-2 rounded-md hover:bg-petal/50"
-          >
-            {label}
-          </button>
-        ))}
-      </nav>
+  const items: Array<[string, string]> = [
+    ['home', 'hero'],
+    ['collections', 'product-showcase'],
+    ['gallery', 'gallery'],
+    ['how to order', 'how-to-order'],
+    ['about', 'about'],
+  ];
 
-      {/* Title */}
-      <header className="text-center py-4 sm:py-6 md:py-8 px-4">
-        <div className="relative inline-block">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-cocoa tracking-widest leading-tight font-serif mb-2">
-            AGAYKAGA
-          </h1>
-          {/* Small underline with proper spacing */}
-          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 md:w-24 lg:w-28 h-0.5 bg-merlot"></div>
+  return (
+    <div className="sticky top-0 z-40 backdrop-blur-md bg-white/90 border-b border-[color:var(--gray-200)]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-14">
+          {/* Wordmark — pixel display */}
+          <button
+            onClick={() => scrollToSection('hero')}
+            className="font-pixel text-xl sm:text-2xl text-ink"
+            aria-label="Home"
+          >
+            agaykaga
+          </button>
+
+          {/* Nav — mono micro labels */}
+          <nav className="flex items-center gap-4 sm:gap-6">
+            {items.map(([label, id]) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="micro-label hover:text-ink transition-colors duration-200"
+              >
+                {label}
+              </button>
+            ))}
+          </nav>
         </div>
-      </header>
-    </>
+      </div>
+    </div>
   );
 }
 

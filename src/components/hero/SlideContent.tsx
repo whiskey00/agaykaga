@@ -1,59 +1,49 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HeroSlide } from '../../data/heroSlides';
-import {
-  getTextColor,
-  getDecorativeLineColor,
-  getSubtitleColor,
-  getDescriptionColor
-} from '../../utils/colorHelpers';
 
 interface SlideContentProps {
   slide: HeroSlide;
 }
 
 export const SlideContent: React.FC<SlideContentProps> = ({ slide }) => {
-  const textColor = getTextColor(slide.backgroundColor);
-  const lineColor = getDecorativeLineColor(slide.backgroundColor);
-  const subtitleColor = getSubtitleColor(slide.backgroundColor);
-  const descriptionColor = getDescriptionColor(slide.backgroundColor);
-
   return (
     <div
-      className={`absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 transition-all duration-1000 ${textColor}`}
-      style={{ backgroundColor: slide.backgroundColor }}
+      key={slide.id}
+      className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8 md:p-10 bg-white"
     >
-      <div className="text-center max-w-md mx-auto">
-        {/* Top decorative line */}
-        <div className={`w-16 h-0.5 mx-auto mb-3 sm:mb-4 ${lineColor}`}></div>
+      {/* Section label */}
+      <div className="absolute top-6 left-6 micro-label">
+        02 &mdash; now showing
+      </div>
 
-        {/* Main title */}
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 font-serif leading-tight">
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center max-w-md mx-auto"
+      >
+        <div className="chip mb-5">seasonal collection</div>
+
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-ink leading-tight mb-4">
           {slide.title}
         </h2>
 
-        {/* Subtitle */}
-        <p className={`text-xs sm:text-sm md:text-base font-light leading-relaxed mb-2 sm:mb-3 ${subtitleColor}`}>
+        <div className="rule w-16 mx-auto mb-4" />
+
+        <p className="text-sm sm:text-base text-ink/70 leading-relaxed mb-3">
           {slide.subtitle}
         </p>
 
-        {/* Description */}
-        <div className={`text-xs sm:text-sm font-medium italic ${descriptionColor}`}>
+        <div className="micro-label mt-4">
           {slide.description}
         </div>
 
-        {/* Bottom decorative line */}
-        <div className={`w-12 h-0.5 mx-auto mt-3 sm:mt-4 ${lineColor}`}></div>
-
-        {/* CTA Button */}
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className={`mt-6 px-6 py-2 rounded-full border-2 ${lineColor} ${textColor} text-sm font-semibold uppercase tracking-wider hover:bg-white/10 transition-colors`}
-        >
-          Shop Now
-        </motion.button>
-      </div>
+        <button className="btn-primary mt-8 inline-flex items-center gap-2">
+          shop now
+          <span aria-hidden>&rarr;</span>
+        </button>
+      </motion.div>
     </div>
   );
 };

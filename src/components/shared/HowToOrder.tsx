@@ -1,148 +1,115 @@
 import React from 'react';
-import { MessageCircle, Instagram, Mail, CheckCircle, ArrowRight } from 'lucide-react';
+import { MessageCircle, Instagram, Mail } from 'lucide-react';
 
 function HowToOrder() {
   const steps = [
     {
-      number: "01",
-      title: "Browse Our Collection",
-      description: "Explore our beautiful fuzzy wire flowers and find the perfect pieces for your space.",
-      icon: <CheckCircle className="w-6 h-6" />
+      number: '01',
+      title: 'browse our collection',
+      description: 'Explore our fuzzy wire flowers and find the perfect pieces for your space.',
     },
     {
-      number: "02", 
-      title: "Contact Us",
-      description: "Reach out to us via Facebook Messenger, Instagram DM, or email to place your order.",
-      icon: <MessageCircle className="w-6 h-6" />
+      number: '02',
+      title: 'contact us',
+      description: 'Reach out via Facebook Messenger, Instagram DM, or email to place your order.',
     },
     {
-      number: "03",
-      title: "Customize & Confirm",
-      description: "Discuss your preferences, get a quote, and confirm your order details with us.",
-      icon: <CheckCircle className="w-6 h-6" />
+      number: '03',
+      title: 'customize & confirm',
+      description: 'Discuss your preferences, get a quote, and confirm your order details with us.',
     },
     {
-      number: "04",
-      title: "Enjoy Your Flowers",
-      description: "Receive your handcrafted fuzzy wire flowers and enjoy their lasting beauty!",
-      icon: <CheckCircle className="w-6 h-6" />
-    }
+      number: '04',
+      title: 'enjoy your flowers',
+      description: 'Receive your handcrafted fuzzy wire flowers and enjoy their lasting beauty.',
+    },
   ];
 
   const contactMethods = [
     {
-      platform: "Facebook Messenger",
-      icon: <MessageCircle className="w-5 h-5" />,
-      link: "https://facebook.com/agaykaga",
-      description: "Chat with us directly",
-      color: "bg-blue-600"
+      platform: 'facebook messenger',
+      icon: <MessageCircle className="w-4 h-4" />,
+      link: 'https://facebook.com/agaykaga',
+      handle: 'facebook.com/agaykaga',
     },
     {
-      platform: "Instagram DM", 
-      icon: <Instagram className="w-5 h-5" />,
-      link: "https://instagram.com/agaykaga",
-      description: "Send us a message",
-      color: "bg-gradient-to-r from-purple-500 to-pink-500"
+      platform: 'instagram dm',
+      icon: <Instagram className="w-4 h-4" />,
+      link: 'https://instagram.com/agaykaga',
+      handle: 'instagram.com/agaykaga',
     },
     {
-      platform: "Email",
-      icon: <Mail className="w-5 h-5" />,
-      link: "mailto:ichacasabar@gmail.com",
-      description: "Email us your order",
-      color: "bg-red-600"
-    }
+      platform: 'email',
+      icon: <Mail className="w-4 h-4" />,
+      link: 'mailto:ichacasabar@gmail.com',
+      handle: 'ichacasabar@gmail.com',
+    },
   ];
 
   return (
-    <section id="how-to-order" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-almond">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+    <section id="how-to-order" className="py-20 sm:py-24 md:py-28 bg-white">
+      <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-cocoa mb-3 sm:mb-4 leading-tight">
-            How to Order
+        <div className="text-center mb-14">
+          <div className="micro-label mb-3">06 &mdash; how to order</div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl text-ink mb-4 leading-tight">
+            getting your flowers is simple.
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-cocoa/70 max-w-2xl mx-auto px-4">
-            Getting your perfect fuzzy wire flowers is simple! Follow these easy steps to place your order.
+          <p className="font-serif-longform text-[17px] leading-[1.75] text-ink/70 max-w-xl mx-auto">
+            Four steps between you and a bouquet that never fades.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12 lg:mb-16">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
-              {/* Step Card */}
-              <div className="bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-lg h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-merlot text-white flex items-center justify-center text-sm font-bold">
-                    {step.number}
-                  </div>
-                  <div className="text-merlot">
-                    {step.icon}
-                  </div>
-                </div>
-                <h3 className="text-base sm:text-lg font-semibold text-cocoa mb-2 sm:mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-cocoa/70 leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-
-              {/* Arrow (hidden on last item) */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className="w-6 h-6 text-merlot" />
-                </div>
-              )}
+        {/* Steps — hairline-divided grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-[color:var(--gray-200)] mb-16">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="border-r border-b border-[color:var(--gray-200)] p-6"
+            >
+              <div className="micro-label mb-4">{step.number}</div>
+              <h3 className="text-base text-ink mb-2 font-medium">
+                {step.title}
+              </h3>
+              <p className="text-sm text-ink/60 leading-relaxed">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>
 
-        {/* Contact Methods */}
-        <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-lg">
-          <div className="text-center mb-6 sm:mb-8">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-cocoa mb-3 sm:mb-4">
-              Ready to Order?
+        {/* Contact block */}
+        <div className="card-bryl p-6 sm:p-8">
+          <div className="text-center mb-8">
+            <div className="micro-label mb-3">ready to order</div>
+            <h3 className="text-xl sm:text-2xl text-ink mb-2">
+              pick a channel &mdash; we&apos;ll take it from there.
             </h3>
-            <p className="text-sm sm:text-base text-cocoa/70">
-              Choose your preferred way to contact us and start your order today!
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-            {contactMethods.map((method, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 border-t border-l border-[color:var(--gray-200)]">
+            {contactMethods.map((m) => (
               <a
-                key={index}
-                href={method.link}
-                target={method.platform === "Email" ? "_self" : "_blank"}
-                rel={method.platform === "Email" ? "" : "noopener noreferrer"}
-                className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border-2 border-transparent hover:border-merlot/30 transition-all duration-300 hover:shadow-md"
+                key={m.platform}
+                href={m.link}
+                target={m.platform === 'email' ? '_self' : '_blank'}
+                rel={m.platform === 'email' ? '' : 'noopener noreferrer'}
+                className="group flex flex-col gap-2 p-5 border-r border-b border-[color:var(--gray-200)] hover:bg-[color:var(--gray-50)] transition-colors"
               >
-                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full ${method.color} flex items-center justify-center text-white group-hover:scale-110 transition-transform flex-shrink-0`}>
-                  {method.icon}
+                <div className="flex items-center gap-2 text-ink">
+                  {m.icon}
+                  <span className="micro-label !text-ink">{m.platform}</span>
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-sm sm:text-base font-semibold text-cocoa group-hover:text-merlot transition-colors">
-                    {method.platform}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-cocoa/60">
-                    {method.description}
-                  </p>
-                </div>
+                <span className="font-mono-ui text-xs text-ink/60 group-hover:text-ink transition-colors truncate">
+                  {m.handle} &nearr;
+                </span>
               </a>
             ))}
           </div>
 
-          {/* Additional Info */}
-          <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-stone-200">
-            <div className="text-center">
-              <p className="text-xs sm:text-sm text-cocoa/70 mb-2">
-                <strong>Response Time:</strong> We typically respond within 2-4 hours during business hours
-              </p>
-              <p className="text-xs sm:text-sm text-cocoa/70">
-                <strong>Custom Orders:</strong> We love creating custom pieces! Just let us know your vision.
-              </p>
-            </div>
+          <div className="mt-8 pt-6 border-t border-[color:var(--gray-200)] text-center">
+            <p className="micro-label mb-1">response time &mdash; 2 to 4 hours</p>
+            <p className="micro-label">custom orders &mdash; welcome</p>
           </div>
         </div>
       </div>

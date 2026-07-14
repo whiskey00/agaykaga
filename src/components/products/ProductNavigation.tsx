@@ -11,40 +11,40 @@ export const ProductNavigation: React.FC<ProductNavigationProps> = ({
   currentPage,
   totalPages,
   onPrevious,
-  onNext
+  onNext,
 }) => {
   return (
-    <div className="w-full flex items-center justify-center gap-3 sm:gap-4">
-      <button 
+    <div className="w-full flex items-center justify-center gap-6 mt-6">
+      <button
         onClick={onPrevious}
-        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full grid place-items-center transition-all duration-300 bg-mauve text-white hover:bg-cocoa hover:scale-110 cursor-pointer shadow-md hover:shadow-lg"
+        className="micro-label hover:text-ink transition-colors"
         aria-label="Previous page"
       >
-        ‹
+        &larr; prev
       </button>
-      
-      <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 shadow-lg border border-white/50">
-        <span className="text-xs sm:text-sm font-semibold text-cocoa">
-          {currentPage + 1} / {totalPages}
+
+      <div className="flex items-center gap-3 border border-[color:var(--gray-200)] rounded-full px-3 py-1.5">
+        <span className="font-mono-ui text-xs text-ink">
+          {String(currentPage + 1).padStart(2, '0')} / {String(totalPages).padStart(2, '0')}
         </span>
-        <div className="flex gap-1 ml-2">
+        <div className="flex gap-1">
           {Array.from({ length: totalPages }).map((_, index) => (
             <div
               key={index}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentPage ? 'bg-merlot shadow-md' : 'bg-cocoa/40'
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                index === currentPage ? 'bg-ink' : 'bg-ink/20'
               }`}
             />
           ))}
         </div>
       </div>
-      
-      <button 
+
+      <button
         onClick={onNext}
-        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full grid place-items-center transition-all duration-300 bg-mauve text-white hover:bg-cocoa hover:scale-110 cursor-pointer shadow-md hover:shadow-lg"
+        className="micro-label hover:text-ink transition-colors"
         aria-label="Next page"
       >
-        ›
+        next &rarr;
       </button>
     </div>
   );
